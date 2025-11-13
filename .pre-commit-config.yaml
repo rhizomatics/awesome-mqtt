@@ -19,15 +19,10 @@ repos:
     rev: v1.1.0
     hooks:
       - id: awesome-lint
-  - repo: local
+  - repo: https://github.com/lycheeverse/lychee.git
+    rev: v0.15.1
     hooks:
-      - id: lychee-links
-        name: Link Check (lychee)
-        entry: lychee
-        language: system
-        files: \.(md|markdown)$
-        args: ['--config', '.github/workflows/lychee.toml', '--verbose', '--no-progress']
-        description: "Check links in markdown files"
-        pass_filenames: true
-        # Set to manual stage so it doesn't run automatically on every commit
+      - id: lychee
+        # Optionally include additional CLI arguments
+        args: ["--no-progress", "--max-cache-age 7d","--exclude", "file://LICENSE"]
         stages: [manual]
