@@ -1,6 +1,0 @@
-[settings]
-# Cooldown for tool upgrades (policies/project_standards.md in rhizomatics/hq)
-minimum_release_age = "7d"
-
-[tools]
-prek = "latest"
